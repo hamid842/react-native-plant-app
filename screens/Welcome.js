@@ -8,11 +8,8 @@ export default class Welcome extends Component {
   };
   render() {
     return (
-      <Block>
-        <Text center middle>
-          {" "}
-          Welcome{" "}
-        </Text>
+      <Block center middle>
+        <Text>Welcome</Text>
       </Block>
     );
   }

@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Block } from "./components/Block";
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Block } from "./components";
 
-import { AppLoading, Asset } from "expo";
+import { AppLoading } from "expo";
+import { Asset } from "expo-asset";
+
 import Navigation from "./navigation";
 
 const images = [
@@ -23,7 +25,7 @@ const images = [
   require("./assets/images/explore_5.png"),
   require("./assets/images/avatar.png")
 ];
-export default class App extends Component {
+export default class App extends React.Component {
   state = {
     isLoadingComplete: false
   };
@@ -40,24 +42,18 @@ export default class App extends Component {
       return (
         <AppLoading
           startAsync={this.handleResourcesAsync}
-          onError={err => console.warn(err)}
+          onError={error => console.warn(error)}
           onFinish={() => this.setState({ isLoadingComplete: true })}
         />
       );
     }
+
     return (
-      <Block style={styles.container}>
+      <Block white>
         <Navigation />
       </Block>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+const styles = StyleSheet.create({});

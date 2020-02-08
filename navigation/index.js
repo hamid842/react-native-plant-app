@@ -1,30 +1,49 @@
 import React from "react";
 import { Image } from "react-native";
-import { createAppContainer, createStackNavigator } from "react-navigation";
-import { theme } from "../constants";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+
 import Welcome from "../screens/Welcome";
-// import Browse from "../screens/Browse";
 // import Login from "../screens/Login";
+// import SignUp from "../screens/SignUp";
+// import Forgot from "../screens/Forgot";
 // import Explore from "../screens/Explore";
+// import Browse from "../screens/Browse";
 // import Product from "../screens/Product";
-// import Setting from "../screens/Setting";
+// import Settings from "../screens/Settings";
+
+import { theme } from "../constants";
 
 const screens = createStackNavigator(
   {
     Welcome
-    // Browse,
-    // Login,
-    // Explore,
-    // Product,
-    // Setting
+    //   Login,
+    //   SignUp,
+    //   Forgot,
+    //   Explore,
+    //   Browse,
+    //   Product,
+    //   Settings
   },
   {
     defaultNavigationOptions: {
-      headerStyle: {},
-      headerBackImage: <Image />,
+      headerStyle: {
+        height: theme.sizes.base * 4,
+        backgroundColor: theme.colors.white, // or 'white
+        borderBottomColor: "transparent",
+        elevation: 0 // for android
+      },
+      headerBackImage: <Image source={require("../assets/icons/back.png")} />,
       headerBackTitle: null,
-      headerLeftContainerStyle: {},
-      headerRightContainerStyle: {}
+      headerLeftContainerStyle: {
+        alignItems: "center",
+        marginLeft: theme.sizes.base * 2,
+        paddingRight: theme.sizes.base
+      },
+      headerRightContainerStyle: {
+        alignItems: "center",
+        paddingRight: theme.sizes.base
+      }
     }
   }
 );
