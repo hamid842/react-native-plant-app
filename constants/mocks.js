@@ -29,7 +29,7 @@ const categories = [
   },
   {
     id: "pots",
-    name: "ots",
+    name: "pots",
     tags: ["products", "shop"],
     count: 47,
     image: require("../assets/icons/pots.png")
